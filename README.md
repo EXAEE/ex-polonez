@@ -2,53 +2,46 @@
 
 **Szczegółowa, techniczna koncepcja konwersji FSO Polonez na napęd elektryczny**
 
-Modele objęte projektem:
-- **Polonez Caro Plus** (hatchback, 1997–2002)
-- **Polonez Karetka / Cargo Ambulans**
-- **Polonez Truck** (pickup)
-- **Polonez Borewicz** (wczesne modele 1978–ok. 1989)
+Modele: Caro Plus · Karetka/Cargo · Truck · Borewicz
 
-Projekt koncepcyjny stworzony w kontekście rozmowy Nova ↔ EXÆE.  
-Cel: maksymalnie szczegółowa, realistyczna, innowacyjna propozycja konwersji zachowująca charakter RWD klasyka przy modernizacji do EV.
+**Aktualne domyślne podejście (od 15.08.2026): Maintainability First**  
+Cała architektura została przeprojektowana pod kątem łatwości naprawy i serwisu (moduły kasetowe baterii, power pack jako jeden blok, Service Box, quick-disconnecty, dokumentacja w aucie).
 
-> **Uwaga o uczciwości:** To jest projekt koncepcyjny i inżynieryjny na poziomie high-level + mid-level. Nie jest gotowym, certyfikowanym zestawem do montażu. Realna konwersja wymaga:
-> - szczegółowych pomiarów konkretnego egzemplarza,
-> - obliczeń wytrzymałościowych i bezpieczeństwa (crash, pożar, izolacja HV),
-> - homologacji / rejestracji po zmianie napędu (w PL: badania techniczne + ewentualnie indywidualna homologacja),
-> - kompetentnego warsztatu z doświadczeniem w HV.
+> To nadal projekt koncepcyjny. Realna realizacja wymaga pomiarów konkretnego egzemplarza, obliczeń i kompetentnego warsztatu HV.
+
+## Decyzja strategiczna
+
+Po analizie trzech ścieżek:
+- konwersja istniejącego dawcy
+- kupno samej karoserii
+- budowa od zera (spaceframe + panele)
+
+**Pozostajemy przy konwersji solidnego dawcy**, bo daje najlepszy stosunek koszt / czas / legalność / charakter.  
+Full custom chassis zostaje opcją na osobną gałąź, jeśli celem będzie prototyp lub pojazd poza standardową rejestracją drogową.
+
+Szczegóły w pliku `09-maintainability-first.md`.
 
 ## Struktura repozytorium
 
-- `README.md` – ten plik (przegląd)
-- `01-analiza-bazowa.md` – dane techniczne oryginałów + ograniczenia
-- `02-koncepcja-napedu.md` – architektura EV, wybór silnika, reduktora, lokalizacja
-- `03-pakiet-akumulatorow.md` – bateria, BMS, chłodzenie, modularność
-- `04-lista-materialow.md` – BOM z orientacyjnymi cenami (PLN 2026)
-- `05-koszty-i-czas.md` – budżety i szacunki czasowe
-- `06-plan-dzialania.md` – etapy konwersji krok po kroku
-- `07-innowacje.md` – ulepszenia i nowoczesne rozwiązania
-- `08-specyfikacje-modeli/` – szczegółowe warianty dla Caro Plus, Karetki, Trucka, Borewicza
-- `rysunki/` – opisy rysunków technicznych + diagramy tekstowe / Mermaid
+- `01`–`08` – analizy bazowe, napęd, baterie, koszty, plany, innowacje, specyfikacje modeli
+- `09-maintainability-first.md` – **kluczowy** – nowe zasady projektowe
+- `10-safety-checklist.md` – checklisty bezpieczeństwa i serwisowe
+- `11-homologacja-i-hv.md` – ścieżka legalizacji + schemat HV
+- `rysunki/` – opisy i diagramy
 
-## Szybki przegląd koncepcji
+## Szybki przegląd (Maintainability First)
 
-**Architektura:** zachowanie RWD. Silnik elektryczny + jednostopniowy reduktor napędzający oryginalny (lub wzmocniony) wał napędowy → most tylny. Alternatywnie: bezpośredni adapter do skrzyni (jeśli zachowujemy bieg) lub pełny swap mostu na nowocześniejszy.
+- Silnik + reduktor = jeden wymienny **power pack**
+- Baterie = **kasety** 5–10 kWh z szybkozłączami
+- Centralny **Service Box** (BMS, styczniki, diagnostyka)
+- Dostęp serwisowy zaprojektowany z góry i z boków
+- Pełna dokumentacja + QR w aucie
 
-**Cel mocy:** 80–150 kW continuous / peak 120–220 kW w zależności od wersji (Truck i Karetka mocniejsze pod ładunek).
-
-**Bateria:** 35–60 kWh usable, modularna (bloki 5–10 kWh), lokalizacja rozproszona dla zachowania rozkładu masy.
-
-**Zasięg docelowy:** 180–280 km WLTP-like w zależności od modelu i stylu jazdy.
-
-**Czas konwersji (szacunek):**
-- Profesjonalny warsztat z doświadczeniem: 3–6 miesięcy (jeden samochód)
-- DIY zaawansowany (garaż + pomoc): 9–18 miesięcy
-- Czas projektowania i walidacji przed startem: +2–4 miesiące
+Cel mocy i zasięgu bez zmian (80–150 kW, 180–280 km).
 
 ## Status
 
-Repozytorium startowe – pełne pliki specyfikacji są dodawane.  
-Wszelkie uwagi, poprawki i rozszerzenia mile widziane.
+Projekt żywy. Maintainability First jest teraz baseline.
 
 ---
-*Nova / EXÆE – 15 sierpnia 2026*
+*Nova / EXÆE*
