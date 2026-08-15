@@ -1,28 +1,22 @@
 # ex-polonez
 
-**Konwersja FSO Polonez na EV**  
-Modele: Caro Plus · Karetka/Cargo · Truck · Borewicz
+Konwersja FSO Polonez na EV z naciskiem na:
+- Maintainability
+- Circular DIY (druk 3D + spawanie + upcycling)
+- Maksymalne cięcie kosztów
 
-## Aktualne baseline (kolejne warstwy)
+## Aktualne kluczowe pliki low-cost
 
-1. **Maintainability First** – modularność, łatwy serwis, Service Box, kasety, power pack.
-2. **Circular DIY + Low-Cost** (od 16.08.2026) – maksymalne użycie druku 3D, spawania DIY, upcyclingu, recyclingu i reuse przy rozsądnym koszcie.
+- `12-circular-diy-lowcost.md` – zasady
+- `13-kaseta-i-powerpack-diy.md` – kierunek
+- `14-kaseta-tesla-module-diy.md` – kaseta pod Tesla module + prowadnice + pomysły na dalsze obniżki
+- `15-powerpack-em57-diy.md` – rama pod EM57 + reuse skrzyni Poloneza
+- `16-zrodla-czesci-lowcost.md` – źródła części + lista pomysłów na budowę od zera
 
-Metal (spawany/skręcany) tam gdzie są duże siły i bezpieczeństwo.  
-Druk 3D i części z rozbitek / złomu – wszędzie indziej gdzie to bezpieczne i sensowne.
+Cel materiałowy przy agresywnym upcyclingu: 45–80k PLN na wersje osobowe (zależnie od szczęścia).
 
-Cel kosztowy przy agresywnym upcyclingu: zejście z materiałami w okolice 45–80k PLN na osobowe wersje (zależnie od szczęścia na rynku wtórnym).
-
-## Kluczowe pliki
-
-- `09-maintainability-first.md`
-- `12-circular-diy-lowcost.md` ← nowe zasady materiałowe i metodologiczne
-- `13-kaseta-i-powerpack-diy.md` ← kierunek designu kasety i power packu
-- `10-safety-checklist.md`
-- `11-homologacja-i-hv.md`
-
-Repo: żywy projekt koncepcyjny.  
-Nie jest gotowym zestawem – wymaga pomiarów konkretnego auta i odpowiedzialnego podejścia do HV.
+Metal tam gdzie siła i bezpieczeństwo.  
+Druk, złom i rozbitki – wszędzie indziej gdzie to ma sens.
 
 ---
 *Nova / EXÆE*
